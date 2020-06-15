@@ -129,8 +129,19 @@
 		.toggle.off:before {
 			left: 29.38px;
 		}
-	</style>
 
+		@media (max-width: 480px) {
+			.
+
+		}
+
+		@media  (min-width: 480px) {
+			.item {
+				width: 50% !important;
+			}
+		}
+	</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i|Open+Sans:400,400i,700,700i|Roboto:400,400i,700,700i" rel="stylesheet">		<style>
 	/* snazzy-info-window.min.css v1.1.1 */
@@ -180,7 +191,7 @@
 			<img src="./w-icon.png" alt="" class="icon">
 			<h2 class="item-tile">Cycling & walking routes</h2>
 			<p class="description">Routes along nature & dolmens</p>
-			<div class="toggle off" id="toggle-routes"></div>
+			<div class="toggle on" id="toggle-routes"></div>
 		</div>
 	</div>
 </div>
@@ -212,7 +223,6 @@
 		if (itemSort === 'routes') routes = newValue;
 		for (var d = 0; d < markers.length; d++) {
 			const { id } = markers[d];
-			console.log(id, itemSort, newValue);
 			if (id === 'activity' && itemSort === 'activities') {
 				if (newValue) {
 					markers[d].setAnimation(google.maps.Animation.DROP);
@@ -232,6 +242,15 @@
 				}
 			}
 			if (id === 'nature' && itemSort === 'natural') {
+				if (newValue) {
+					markers[d].setAnimation(google.maps.Animation.DROP);
+					markers[d].setMap(map);
+				} else {
+					markers[d].setAnimation(null);
+					markers[d].setMap(null);
+				}
+			}
+			if (id === 'route' && itemSort === 'routes') {
 				if (newValue) {
 					markers[d].setAnimation(google.maps.Animation.DROP);
 					markers[d].setMap(map);
@@ -1248,9 +1267,283 @@
 		})(); // nature
 
 
+		(function(){
+			var markerOptions = {
+				id: 'route',
+animation: google.maps.Animation.DROP,
+				map: map,
+				position: {
+					lat: 52.956407,
+					lng: 6.798185,
+				}
+			};
+
+			markerOptions.icon = {
+				url: 'https://snazzy-maps-cdn.azureedge.net/assets/marker-53ac2e04-56d0-479f-a066-13cb1c0e64f2.png',
+				scaledSize: new google.maps.Size(
+						30,
+						30),
+				size: new google.maps.Size(
+						30,
+						30),
+				anchor: new google.maps.Point(
+						15,
+						15)
+			};
+			markerOptions.options = {
+				optimized: true,
+			};
+
+			markers.push(new google.maps.Marker(markerOptions));
+
+
+
+			var infoWindow = new SnazzyInfoWindow({
+				marker: markers[18],
+				wrapperClass: 'ql-snow',
+				placement: 'right',
+				backgroundColor: '#fff',
+				fontColor: '#000',
+				content: '<div class="ql-editor" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">\u003ch3\u003e\u003cspan data-font-index=\"4\" style=\"color: rgb(107, 36, 178); font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eCycling route:\u003c/span\u003e\u003c/h3\u003e\u003ch2\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eDe Flintenroute\u003c/span\u003e\u003c/h2\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eFlinten are boulders. You will often encounter them along the route. People have made dolmens of the greatest; the little ones are used for the construction of paths and roads. Within a radius of 1 km along the route you will find no less than 18 dolmens.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://www.route.nl/fietsroute/199348/de-flintenroute#praktische-informatie\" target=\"_blank\" data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003e\u003cstrong data-font-index=\"4\"\u003eWEBSITE WITH ROUTE\u003c/strong\u003e\u003c/a\u003e\u003c/p\u003e</div>',
+				maxWidth: 300,
+				maxHeight: undefined,
+				padding: "30px",
+				borderRadius: "10px 10px",
+				offset: {
+					top: "0px",
+					left: "15px",
+				},
+				border: {"width":"4px","color":"#6b24b2"},
+				pointer: "15px",
+				shadow: {"h":"0px","v":"1px","blur":"3px","spread":"0px","opacity":0.3,"color":"#000000"},
+				closeOnMapClick: true,
+				closeWhenOthersOpen: true,
+			});
+
+		})();
+
+		(function(){
+			var markerOptions = {
+				id: 'route',
+animation: google.maps.Animation.DROP,
+				map: map,
+				position: {
+					lat: 52.930234,
+					lng: 6.800398,
+				}
+			};
+
+			markerOptions.icon = {
+				url: 'https://snazzy-maps-cdn.azureedge.net/assets/marker-40e80738-dc8e-4728-8986-76adfd10aa05.png',
+				scaledSize: new google.maps.Size(
+						30,
+						30),
+				size: new google.maps.Size(
+						30,
+						30),
+				anchor: new google.maps.Point(
+						8,
+						6)
+			};
+			markerOptions.options = {
+				optimized: true,
+			};
+
+			markers.push(new google.maps.Marker(markerOptions));
+
+
+
+			var infoWindow = new SnazzyInfoWindow({
+				marker: markers[19],
+				wrapperClass: 'ql-snow',
+				placement: 'right',
+				backgroundColor: '#fff',
+				fontColor: '#000',
+				content: '<div class="ql-editor" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">\u003ch3\u003e\u003cspan data-font-index=\"4\" style=\"color: rgb(107, 36, 178); font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eCycling route:\u003c/span\u003e\u003c/h3\u003e\u003ch2\u003e\u003cstrong data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eCycling in search of the Ice Ages\u003c/strong\u003e\u003c/h2\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eThe\u0026nbsp;17 kilometre cycle trail\u0026nbsp;begins at the\u0026nbsp;Hunebedcentrum in Borger, home to the Hondsrug UNESCO Global\u0026nbsp;Geopark’s Expedition Gateway to the Ice Ages. Your guide will first show you the exhibition and then cycle with you along the whole trail, stopping at places of interest and telling you the story of the ice ages.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eThe first stop is in the\u0026nbsp;village of Ees\u0026nbsp;by a feature known as a\u0026nbsp;‘glacial kettle’\u0026nbsp;(Gletsjerkuil). Just imagine, during the last Ice Age a mountain of ice many metres high stood here …\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://www.dehondsrug.nl/excursies/ijstijden/?lang=en\" target=\"_blank\" data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003e\u003cstrong data-font-index=\"4\"\u003eWEBSITE WITH ROUTE\u003c/strong\u003e\u003c/a\u003e\u003c/p\u003e</div>',
+				maxWidth: 400,
+				maxHeight: undefined,
+				padding: "30px",
+				borderRadius: "10px 10px",
+				offset: {
+					top: "9px",
+					left: "22px",
+				},
+				border: {"width":"4px","color":"#6b24b2"},
+				pointer: "15px",
+				shadow: {"h":"0px","v":"1px","blur":"3px","spread":"0px","opacity":0.3,"color":"#000000"},
+				closeOnMapClick: true,
+				closeWhenOthersOpen: true,
+			});
+
+		})();
+
+		(function(){
+			var markerOptions = {
+				id: 'route',
+animation: google.maps.Animation.DROP,
+				map: map,
+				position: {
+					lat: 52.930234,
+					lng: 6.800398,
+				}
+			};
+
+			markerOptions.icon = {
+				url: 'https://snazzy-maps-cdn.azureedge.net/assets/marker-38815471-ce83-4045-9147-24512e687dac.png',
+				scaledSize: new google.maps.Size(
+						30,
+						30),
+				size: new google.maps.Size(
+						30,
+						30),
+				anchor: new google.maps.Point(
+						30,
+						10)
+			};
+			markerOptions.options = {
+				optimized: true,
+			};
+
+			markers.push(new google.maps.Marker(markerOptions));
+
+
+
+			var infoWindow = new SnazzyInfoWindow({
+				marker: markers[20],
+				wrapperClass: 'ql-snow',
+				placement: 'left',
+				backgroundColor: '#fff',
+				fontColor: '#000',
+				content: '<div class="ql-editor" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">\u003ch3\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif; color: rgb(107, 36, 178);\"\u003eCycling route:\u003c/span\u003e\u003c/h3\u003e\u003ch2\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eClimbing ice age hills\u003c/span\u003e\u003c/h2\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eFrom the Hunebedcentrum in Borger you can make a nice cycling tour accross the Hondsrug. You’ll visit four important hot spots near Borger: the ‘buunerbult’ with a spectacular view of the Hondsrug; the slopes of the dry valleys from the last ice age in the Hunzebos; the Molenveld heathland with the enigmatic ‘Leewal’ near Exloo and the glacial hollow near the small town of Ees. Together they illustrate the story of the ice ages in the Hondsrug area and its relics.\u0026nbsp;\u0026nbsp;\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://www.dehondsrug.nl/routes/ijstijdenroute/?lang=en\" target=\"_blank\" data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003e\u003cstrong data-font-index=\"4\"\u003eWEBSITE WITH ROUTE\u003c/strong\u003e\u003c/a\u003e\u003c/p\u003e</div>',
+				maxWidth: 400,
+				maxHeight: undefined,
+				padding: "30px",
+				borderRadius: "10px 10px",
+				offset: {
+					top: "5px",
+					left: "-30px",
+				},
+				border: {"width":"4px","color":"#6b24b2"},
+				pointer: "15px",
+				shadow: {"h":"0px","v":"1px","blur":"3px","spread":"0px","opacity":0.3,"color":"#000000"},
+				closeOnMapClick: true,
+				closeWhenOthersOpen: true,
+			});
+
+		})();
+
+		(function(){
+			var markerOptions = {
+				id: 'route',
+animation: google.maps.Animation.DROP,
+				map: map,
+				position: {
+					lat: 52.870096,
+					lng: 6.858865,
+				}
+			};
+
+			markerOptions.icon = {
+				url: 'https://snazzy-maps-cdn.azureedge.net/assets/marker-bc769c50-0392-45f3-8b55-9cf98a4480a4.png',
+				scaledSize: new google.maps.Size(
+						30,
+						30),
+				size: new google.maps.Size(
+						30,
+						30),
+				anchor: new google.maps.Point(
+						15,
+						15)
+			};
+			markerOptions.options = {
+				optimized: true,
+			};
+
+			markers.push(new google.maps.Marker(markerOptions));
+
+
+
+			var infoWindow = new SnazzyInfoWindow({
+				marker: markers[21],
+				wrapperClass: 'ql-snow',
+				placement: 'bottom',
+				backgroundColor: '#fff',
+				fontColor: '#000',
+				content: '<div class="ql-editor" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">\u003ch3\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif; color: rgb(107, 36, 178);\"\u003eWalking tour:\u003c/span\u003e\u003c/h3\u003e\u003ch2\u003e\u003cstrong data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eA walk through (pre)history\u003c/strong\u003e\u003c/h2\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eThis hike of 7.5 kilometres will take you through forests and over heaths and sand dunes, along hunebeds and fields between the old towns of Exloo and Odoorn, and you will travel through 470.000 years of history.\u0026nbsp;You will see impressive remains from the ice ages, such as large erratic boulders and the enigmatic Leewal that curves through the landscape.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://www.dehondsrug.nl/routes/leewal-walk-through-time/?lang=en\" target=\"_blank\" data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003e\u003cstrong data-font-index=\"4\"\u003eWEBSITE WITH ROUTE\u003c/strong\u003e\u003c/a\u003e\u003c/p\u003e</div>',
+				maxWidth: 300,
+				maxHeight: undefined,
+				padding: "30px",
+				borderRadius: "10px 10px",
+				offset: {
+					top: "15px",
+					left: "0px",
+				},
+				border: {"width":"4px","color":"#6b24b2"},
+				pointer: "15px",
+				shadow: {"h":"0px","v":"1px","blur":"3px","spread":"0px","opacity":0.3,"color":"#000000"},
+				closeOnMapClick: true,
+				closeWhenOthersOpen: true,
+			});
+
+		})();
+
+		(function(){
+			var markerOptions = {
+				id: 'route',
+animation: google.maps.Animation.DROP,
+				map: map,
+				position: {
+					lat: 52.869783,
+					lng: 6.865152,
+				}
+			};
+
+			markerOptions.icon = {
+				url: 'https://snazzy-maps-cdn.azureedge.net/assets/marker-0476694c-f448-4e76-b4d8-891e69ac9a21.png',
+				scaledSize: new google.maps.Size(
+						30,
+						30),
+				size: new google.maps.Size(
+						30,
+						30),
+				anchor: new google.maps.Point(
+						3,
+						0)
+			};
+			markerOptions.options = {
+				optimized: true,
+			};
+
+			markers.push(new google.maps.Marker(markerOptions));
+
+
+
+			var infoWindow = new SnazzyInfoWindow({
+				marker: markers[22],
+				wrapperClass: 'ql-snow',
+				placement: 'bottom',
+				backgroundColor: '#fff',
+				fontColor: '#000',
+				content: '<div class="ql-editor" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">\u003ch3\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif; color: rgb(107, 36, 178);\"\u003eWalking route:\u003c/span\u003e\u003c/h3\u003e\u003ch2\u003e\u003cstrong data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eSabre-toothed tiger trail\u003c/strong\u003e\u003c/h2\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eAre you joining this adventurous trip along the trail of the Sabre-toothed tiger?\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003cspan data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003eIn the fairy-tale-like forest of the Hunzebos you can find the trail of the Sabre-toothed tiger, a playful hike of about 2 kilometers for fearless kids.\u0026nbsp;The trail winds through the forest and over the ice-age hills. You’ll climb, swing on ropes, balance on rickety bridges, swoosh downhill on a cable runway and much more.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://www.dehondsrug.nl/routes/sabre-toothed-tiger-trail/?lang=en\" target=\"_blank\" data-font-index=\"4\" style=\"font-family: \u0026quot;Open Sans\u0026quot;, sans-serif;\"\u003e\u003cstrong data-font-index=\"4\"\u003eWEBSITE WITH ROUTE\u003c/strong\u003e\u003c/a\u003e\u003c/p\u003e</div>',
+				maxWidth: 350,
+				maxHeight: undefined,
+				padding: "30px",
+				borderRadius: "10px 10px",
+				offset: {
+					top: "30px",
+					left: "12px",
+				},
+				border: {"width":"4px","color":"#6b24b2"},
+				pointer: "15px",
+				shadow: {"h":"0px","v":"1px","blur":"3px","spread":"0px","opacity":0.3,"color":"#000000"},
+				closeOnMapClick: true,
+				closeWhenOthersOpen: true,
+			});
+
+		})();
 	}
 </script>
 
-<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZBQ_9eWb86TOMHqHh30ByEcwDW3CJdK8&v=3.31&language=nl&libraries=places,geometry&callback=createMap"></script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi4yUAC02HEYTb2auZUBtmYS0qm22kKtE&v=3.31&language=nl&libraries=places,geometry&callback=createMap"></script>
 </body>
 </html>
